@@ -202,3 +202,15 @@ game_hash.each do |location, team|
   end 
  end
 end 
+
+def most_points_scored 
+  point = 0 
+  game_hash.each do |location, team|
+    team[:player].each do |man|
+      if man[:points] > point 
+        point = man[:points]
+     end
+   end 
+ end 
+  return point
+ end 
